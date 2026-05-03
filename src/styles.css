@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Imprima&family=Lexend+Exa:wght@100..900&display=swap');
+@import "tailwindcss";
+@plugin "tailwindcss-motion";
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --color-text: #e1f3f0;
+    --color-background: #091e1a;
+    --color-primary: #84e5d4;
+    --color-secondary: #128c77;
+    --color-accent: #24f2ce;
+    
+    --font-sans: "Imprima", ui-sans-serif, system-ui, sans-serif;
+    --font-title: "Lexend Exa",  ui-sans-serif, system-ui, sans-serif;
+}
+
+.flip{
+
+}
+
+
+html,
+body {
+    min-height: 100%;
+    background-color: var(--color-background);
+}
