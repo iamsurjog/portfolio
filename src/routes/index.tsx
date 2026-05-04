@@ -15,7 +15,6 @@ import {
   Mail,
   Github,
   Linkedin,
-  Twitter,
   Database,
   Layers,
   Zap,
@@ -236,7 +235,7 @@ function App() {
           </div>
         </div>
 
-        <div ref={scrollHintRef} className="absolute bottom-10 flex flex-col items-center gap-2">
+        <div ref={scrollHintRef} className="absolute bottom-10 flex flex-col items-center gap-2 cursor-pointer" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
           <span className="text-xs text-text/40 uppercase tracking-widest">Scroll</span>
           <ArrowDown className="w-4 h-4 text-accent/50" />
         </div>
