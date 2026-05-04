@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { FlipCard } from '#/components/FlipCard'
 import { projects } from '#/data/projects'
@@ -5,7 +6,15 @@ export const Route = createFileRoute('/')({
   component: App,
 })
 
+const allDomains = Array.from(new Set(projects.flatMap((p) => p.domain))).sort()
+
 function App() {
+    const [selectedDomain, setSelectedDomain] = useState<string | null>(null)
+
+    const filteredProjects = selectedDomain
+        ? projects.filter((p) => p.domain.includes(selectedDomain))
+        : projects
+
     return(
         <main className='bg-background'>
             <div className='h-screen w-screen bg-linear-to-b from-black to-background text-text flex items-center justify-center px-8 md:px-16 relative'>
@@ -33,9 +42,34 @@ function App() {
                     </div>
                 </div>
             </div>
-            <div className='h-screen w-screen bg-transparent flex items-center justify-center font-sans'>
+            <div className='h-screen w-screen bg-transparent flex flex-col items-center justify-center font-sans gap-6'>
+                <div className='flex flex-wrap gap-2 justify-center px-4'>
+                    <button
+                        onClick={() => setSelectedDomain(null)}
+                        className={`px-3 py-1 rounded-full text-sm border transition ${
+                            !selectedDomain
+                                ? 'bg-accent text-black border-accent'
+                                : 'border-accent/40 text-text hover:border-accent'
+                        }`}
+                    >
+                        All
+                    </button>
+                    {allDomains.map((domain) => (
+                        <button
+                            key={domain}
+                            onClick={() => setSelectedDomain(domain === selectedDomain ? null : domain)}
+                            className={`px-3 py-1 rounded-full text-sm border transition ${
+                                selectedDomain === domain
+                                    ? 'bg-accent text-black border-accent'
+                                    : 'border-accent/40 text-text hover:border-accent'
+                            }`}
+                        >
+                            {domain}
+                        </button>
+                    ))}
+                </div>
                 <div className='flex flex-wrap gap-4 justify-center'>
-                    {projects.map((project) => (
+                    {filteredProjects.map((project) => (
                         <FlipCard key={project.name} project={project} />
                     ))}
                 </div>

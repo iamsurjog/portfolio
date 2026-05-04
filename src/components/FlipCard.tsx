@@ -5,6 +5,7 @@ interface Project {
     Description: string
     tags: string[]
     Link: string
+    domain: string[]
 }
 
 export function FlipCard({ project }: { project: Project }) {
