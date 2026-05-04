@@ -29,7 +29,7 @@ export function FlipCard({ project }: { project: Project }) {
                     </div>
                     <div className="flex flex-wrap gap-1 justify-center">
                         {project.domain.map((d) => (
-                            <span key={d} className="text-[10px] bg-background/20 px-2 py-0.5 rounded-full">
+                            <span key={d} className="text-s text-primary bg-background/20 px-2 py-0.5 rounded-full">
                                 {d}
                             </span>
                         ))}
