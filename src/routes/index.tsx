@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { FlipCard } from '#/components/FlipCard'
-import data from '#/data/projects.json'
+import { projects } from '#/data/projects'
 export const Route = createFileRoute('/')({
   component: App,
 })
@@ -34,7 +34,11 @@ function App() {
                 </div>
             </div>
             <div className='h-screen w-screen bg-transparent flex items-center justify-center font-sans'>
-                <FlipCard/>
+                <div className='flex flex-wrap gap-4 justify-center'>
+                    {projects.map((project) => (
+                        <FlipCard key={project.name} project={project} />
+                    ))}
+                </div>
             </div>
         </main>
     )
