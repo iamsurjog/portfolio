@@ -199,16 +199,12 @@ function App() {
           </div>
 
           <div className="text-center md:text-left">
-            <div className="mb-4 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/20 bg-accent/5 backdrop-blur-sm">
-              <Sparkles className="w-4 h-4 text-accent" />
-              <span className="text-sm text-accent/80 font-medium">Welcome to my world</span>
-            </div>
 
             <h1
               ref={titleRef}
               className="font-title text-5xl md:text-7xl lg:text-8xl font-bold text-accent mb-4 leading-tight"
             >
-              John Doe
+              Sujatro Ganguli
             </h1>
 
             <h2
@@ -219,9 +215,7 @@ function App() {
             </h2>
 
             <p className="font-sans text-lg text-text/70 max-w-xl leading-relaxed mb-8">
-              Passionate developer with a love for building elegant, user-centric applications.
-              Experienced in modern web technologies and always eager to learn new tools.
-              Currently crafting digital experiences that make a difference.
+            Third Year Computer Science student proficient in Python, AI Engineering, and Web Development. Expert in RAG frameworks and open-source libraries. Proven leader, as Technical Head at SEDS VIT, delivering high- availability platforms and automated research software
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
@@ -369,16 +363,15 @@ function App() {
               open to interesting conversations and collaborations.
             </p>
             <a
-              href="mailto:your@email.com"
+              href="mailto:sujatro.ganguli@gmail.com"
               className="inline-block px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:bg-accent/80 transition-all duration-300 hover:shadow-[0_0_30px_rgba(36,242,206,0.3)]"
             >
-              your@email.com
+              sujatro.ganguli@gmail.com
             </a>
             <div className="mt-8 flex justify-center gap-6">
               {[
                 { icon: Github, href: 'https://github.com/iamsurjog', label: 'GitHub' },
-                { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-                { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/sujatro-ganguli-68429328b/', label: 'LinkedIn' },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
