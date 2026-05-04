@@ -16,8 +16,8 @@ function App() {
         : projects
 
     return(
-        <main className='bg-background'>
-            <div className='h-screen w-screen bg-linear-to-b from-black to-background text-text flex items-center justify-center px-8 md:px-16 relative'>
+        <main className='bg-linear-to-br from-black to-background'>
+            <div className='h-screen w-screen bg-transparent text-text flex items-center justify-center px-8 md:px-16 relative'>
                 <div className='max-w-7xl w-full flex flex-col md:flex-row items-center gap-12 md:gap-16 relative z-10'>
                     <div className='motion-preset-slide-in-left motion-duration-1000'>
                         <img
@@ -39,6 +39,13 @@ function App() {
                             Experienced in modern web technologies and always eager to learn new tools.
                             Currently crafting digital experiences that make a difference.
                         </p>
+                        <a
+                            href='/cv.pdf'
+                            download
+                            className='mt-6 inline-block px-6 py-2 bg-accent text-black font-semibold rounded-lg hover:bg-accent/80 transition'
+                        >
+                            Download CV
+                        </a>
                     </div>
                 </div>
             </div>
@@ -72,6 +79,48 @@ function App() {
                     {filteredProjects.map((project) => (
                         <FlipCard key={project.name} project={project} />
                     ))}
+                </div>
+            </div>
+            <div className='h-screen w-screen bg-transparent text-text flex items-center justify-center px-8 md:px-16'>
+                <div className='max-w-2xl w-full text-center'>
+                    <h2 className='font-title text-4xl md:text-5xl text-accent font-bold mb-8'>
+                        Get In Touch
+                    </h2>
+                    <p className='font-sans text-lg text-text/80 mb-10'>
+                        Have a question or want to work together? Feel free to reach out.
+                    </p>
+                    <a
+                        href='mailto:your@email.com'
+                        className='inline-block px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:bg-accent/80 transition text-lg'
+                    >
+                        your@email.com
+                    </a>
+                    <div className='mt-10 flex justify-center gap-6'>
+                        <a
+                            href='https://github.com/iamsurjog'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='text-text/60 hover:text-accent transition'
+                        >
+                            GitHub
+                        </a>
+                        <a
+                            href='https://linkedin.com'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='text-text/60 hover:text-accent transition'
+                        >
+                            LinkedIn
+                        </a>
+                        <a
+                            href='https://twitter.com'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='text-text/60 hover:text-accent transition'
+                        >
+                            Twitter
+                        </a>
+                    </div>
                 </div>
             </div>
         </main>
